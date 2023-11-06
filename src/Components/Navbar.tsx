@@ -27,6 +27,7 @@ const Navbar = ({
 
     console.log(Input);
   }
+  
 
   function TextInput(location: string) {
     let check = /[a-zA-Z][,][a-zA-Z]/.test(location);
