@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = ({ AdjustWeather }: { weathers: any; AdjustWeather: any }) => {
   const [Input, setInput] = useState<string[] | any>([""]);
-  const [checkInput, setcheckInput] = useState(false);
+
   function submitSearch(e: React.FormEvent) {
     e.preventDefault();
     //tyrn the input to an array containing both the city name and country Code
