@@ -7,6 +7,5 @@ export const useWeatherContext = () => {
   if (!context) {
     return "i am in the Loading...";
   }
-  console.log(context);
   return context;
 };

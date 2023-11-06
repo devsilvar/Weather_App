@@ -48,7 +48,7 @@ const GetLocation = () => {
       const successCallback = (position: any) => {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        console.log(lat, lon);
+       // console.log(lat, lon);
         userLocation(lat, lon);
         //return { lat, lon };
         return;

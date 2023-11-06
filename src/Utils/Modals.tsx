@@ -32,12 +32,12 @@ const Modals = () => {
         />
         {ShowButton && (
           <>
-            <p className="font-nunito pb-3 -mt-10 text-lg">
+            <p className="font-nunito pb-3 -mt-10 text-center text-lg">
               Kindly refresh Your page if it's taking too long to load...
             </p>
             <button
               onClick={reload}
-              className="mx-auto z-40  items-center flex bg-black text-lg text-orange-400 w-fit rounded-xl px-2 py-1"
+              className="mx-auto z-40  items-center flex bg-black text-lg text-orange-400 w-fit rounded-xl px-3 py-2"
             >
               Reoload the Page
             </button>

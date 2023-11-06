@@ -37,7 +37,6 @@ export function DaysInfo(Days: any) {
   [0, 8, 16, 24, 32, 39].map((item) => {
     DaysArr.push(Days[item]);
   });
-  console.log(DaysArr);
   let Eachday = [
     "Sunday",
     "Monday",

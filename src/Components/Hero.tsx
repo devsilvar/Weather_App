@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react";
-import { cold,  sunCold } from "../assets/Index";
+import { cold, sunCold } from "../assets/Index";
 import { monthNames, thisDay } from "../Utils";
 import { checkWeather } from "../Utils/CheckWeather";
 
-const Hero = ({ weathers, Days }: { weathers: any; Days: any }) => {
-//  const [ChangeWeather, setChangeWeather] = useState<string>("");
-  //const { weathers } = useContext(WeatherContext);
-  //const [hotOrCold, sethotOrCold] = useState<boolean>(false);
-  // const { Days, weathers } = useWeatherContext();
-  // const timer = () => {
-  //   return new Date().toLocaleTimeString();
-  // };
+const Hero = ({ weathers }: { weathers: any; Days: any }) => {
 
   const [Timer, setTimer] = useState<string>("");
-  console.log(weathers);
+  //console.log(weathers);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,11 +28,7 @@ const Hero = ({ weathers, Days }: { weathers: any; Days: any }) => {
   const regionNames = new Intl.DisplayNames(["en"], {
     type: "region",
   });
-
-  console.log(Days);
-  // if (weathers.main.temp < 30) {
-  //   sethotOrCold(false);
-  // }
+ 
 
   return (
     <div className="relative ">

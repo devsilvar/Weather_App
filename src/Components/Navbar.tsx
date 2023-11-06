@@ -4,7 +4,6 @@ import { FaCloudBolt } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = ({
-  weathers,
   AdjustWeather,
 }: {
   weathers: any;
@@ -25,8 +24,6 @@ const Navbar = ({
         }
       );
     }
-
-    console.log(Input);
   }
 
   function TextInput(location: string) {
@@ -34,9 +31,8 @@ const Navbar = ({
     return check;
   }
 
-  // if (!regex) return <Toaster />;
-
-  console.log(weathers);
+  
+//  console.log(weathers);
   return (
     <form
       onSubmit={submitSearch}
