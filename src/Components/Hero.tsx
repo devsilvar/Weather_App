@@ -4,7 +4,6 @@ import { monthNames, thisDay } from "../Utils";
 import { checkWeather } from "../Utils/CheckWeather";
 
 const Hero = ({ weathers }: { weathers: any; Days: any }) => {
-
   const [Timer, setTimer] = useState<string>("");
   //console.log(weathers);
 
@@ -25,10 +24,10 @@ const Hero = ({ weathers }: { weathers: any; Days: any }) => {
     [];
 
   //if (!weathers) return undefined;
+  console.log(weathers);
   const regionNames = new Intl.DisplayNames(["en"], {
     type: "region",
   });
- 
 
   return (
     <div className="relative ">
@@ -42,7 +41,7 @@ const Hero = ({ weathers }: { weathers: any; Days: any }) => {
         <div className="flex  gap-9 lg:gap-0 lg:flex  justify-between lg:w-4/5 w-10/12 mx-auto">
           <div className="">
             <img
-              src={checkWeather(weathers)}
+              src={checkWeather(weathers.weather[0]?.main)}
               alt="sunny"
               className=" lg:w-36 w-20 rounded-full "
             />
@@ -50,7 +49,7 @@ const Hero = ({ weathers }: { weathers: any; Days: any }) => {
               <h2 className=" text-md lg:text-2xl  font-nunito lg:text-center">
                 {weathers.weather[0]?.main}
               </h2>
-              <h3 className=" text-md lg:text-2xl font-nunito lg:text-center">
+              <h3 className=" text-md lg:text-2xl font-nunito capitalize lg:text-center">
                 {weathers.weather[0]?.description}
               </h3>
             </div>
@@ -63,7 +62,7 @@ const Hero = ({ weathers }: { weathers: any; Days: any }) => {
             <h1 className="">{`${thisDay[1]} ${monthNames[thisDay[0] - 1]} ${
               thisDay[2]
             }`}</h1>
-            <p>
+            <p className="capitalize">
               {weathers.name}, {regionNames.of(weathers.sys.country)}
             </p>
             {Timer}

@@ -56,7 +56,7 @@ const IconInfo = ({ weathers }: { weathers: any }) => {
                 <FiSunrise className="text-3xl text-orange-500" />{" "}
                 <div>
                   <p className="text-sm lg:text-md"> SunRise </p>
-                  <p className="font-bold lg:text-xl text-xl ">{sunriseVal}</p>
+                  <p className="font-bold lg:text-xl text-lg ">{sunriseVal}</p>
                 </div>
               </div>
               <div className=" flex items-center gap-3">
@@ -64,7 +64,7 @@ const IconInfo = ({ weathers }: { weathers: any }) => {
                 <FiSunset className="text-3xl text-orange-500" />{" "}
                 <div>
                   <p className="text-sm lg:text-md"> Sunset </p>
-                  <p className="font-bold lg:text-xl text-xl ">{sunsetVal}</p>
+                  <p className="font-bold lg:text-xl text-lg ">{sunsetVal}</p>
                 </div>
               </div>
             </div>

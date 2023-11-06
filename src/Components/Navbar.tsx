@@ -3,13 +3,9 @@ import { FiSearch } from "react-icons/fi";
 import { FaCloudBolt } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 
-const Navbar = ({
-  AdjustWeather,
-}: {
-  weathers: any;
-  AdjustWeather: any;
-}) => {
+const Navbar = ({ AdjustWeather }: { weathers: any; AdjustWeather: any }) => {
   const [Input, setInput] = useState<string[] | any>([""]);
+  const [checkInput, setcheckInput] = useState(false);
   function submitSearch(e: React.FormEvent) {
     e.preventDefault();
     //tyrn the input to an array containing both the city name and country Code
@@ -20,7 +16,7 @@ const Navbar = ({
       return toast.error(
         "For Better Results - Type:\n  'Alabama,US' or 'Moscow,RU'",
         {
-          duration: 8000,
+          duration: 5000,
         }
       );
     }
@@ -30,9 +26,15 @@ const Navbar = ({
     let check = /[a-zA-Z][,][a-zA-Z]/.test(location);
     return check;
   }
+  function checkbox() {
+    if (TextInput(Input) && TextInput(Input) != undefined) {
+      return true;
+    } else if (TextInput(Input) == false && TextInput(Input) != undefined) {
+      return false;
+    }
+  }
 
-  
-//  console.log(weathers);
+  //  console.log(weathers);
   return (
     <form
       onSubmit={submitSearch}
@@ -49,14 +51,18 @@ const Navbar = ({
       <div className="relative  inline-block">
         <input
           type="text"
-          placeholder="Type 'City name, Country Name'"
-          className="border-orange-400 outline-none lg:w-full w-4/5 float-right rounded-lg border  px-1 py-2"
+          placeholder="'City name, Country Code'"
+          className={` ${
+            checkbox() && "border-green-400"
+          }   border-orange-400  border-2 lg:text-base text-xs outline-none lg:w-full w-4/5 float-right rounded-lg ps-4 pe-10 py-2`}
           value={Input}
+          onFocus={checkbox}
           onChange={(e) => setInput(e.target.value)}
         />
         <button className="bg-transparent w-fit" type="submit">
           <FiSearch type="submit" className="absolute right-3 top-3" />
         </button>
+        <p className="text-xs text-right pt-5"> E.g. 'Alabama,US'</p>
       </div>
     </form>
   );

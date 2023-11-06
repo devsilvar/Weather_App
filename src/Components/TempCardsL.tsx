@@ -13,7 +13,7 @@ const TempCardL = ({
     <div>
       <span>{icon}</span>
       <p> {type}</p>
-      <h2 className="text-xl lg:text-2xl font-bold">{degree}</h2>
+      <h2 className="text-lg lg:text-2xl font-bold">{degree}</h2>
     </div>
   );
 };

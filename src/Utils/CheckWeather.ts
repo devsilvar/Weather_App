@@ -9,12 +9,11 @@ import {
   thunderRain,
 } from "../assets/Index";
 
-
 export function checkWeather(weather: any) {
   let searchedWeather;
   switch (weather) {
-    case "rain":
-      searchedWeather = thunderRain;
+    case "Rain":
+      searchedWeather = smallRain;
       break;
     case "sun":
       searchedWeather = sun;
@@ -41,5 +40,7 @@ export function checkWeather(weather: any) {
       searchedWeather = threeCloud;
       break;
   }
+  console.log(weather);
+  console.log(searchedWeather);
   return searchedWeather;
 }

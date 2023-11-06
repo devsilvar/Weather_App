@@ -38,7 +38,7 @@ const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
                     className="text-orange-400 mx-auto"
                   />{" "}
                   <p> Speed</p>
-                  <h2 className="text-xl lg:text-2xl font-bold">
+                  <h2 className="text-lg lg:text-2xl font-bold">
                     {weathers.wind.speed}m/s
                   </h2>
                 </div>
@@ -46,7 +46,7 @@ const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
                 <div>
                   <Thermometer size={32} className="text-orange-400 mx-auto" />{" "}
                   <p>WindDirection</p>
-                  <h2 className="text-xl lg:text-2xl font-bold">
+                  <h2 className="text-lg lg:text-2xl font-bold">
                     {weathers.wind.deg}°
                   </h2>
                 </div>
@@ -54,7 +54,7 @@ const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
                 <div>
                   <Wind size={32} className="text-orange-400 mx-auto" />{" "}
                   <p> Gust</p>
-                  <h2 className="lg:text-2xl text-xl font-bold">
+                  <h2 className="lg:text-2xl text-lg font-bold">
                     {weathers.wind.gust}°m/s
                   </h2>
                 </div>
