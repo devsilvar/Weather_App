@@ -15,7 +15,7 @@ const Modals = () => {
 
   setTimeout(() => {
     setShowButton(true);
-  }, 10000);
+  }, 15000);
 
   return (
     <div className="modal-bg flex items-start z-30  h-[200%] w-5/6 lg:w-[100vw] mx-auto bg-white absolute text-center">
@@ -33,11 +33,11 @@ const Modals = () => {
         {ShowButton && (
           <>
             <p className="font-nunito pb-3 -mt-10 text-lg">
-              Your network Is porbabaly Slow...
+              Kindly refresh Your page if it's taking too long to load...
             </p>
             <button
               onClick={reload}
-              className="mx-auto z-40  items-center flex bg-orange-500 text-lg text-white w-fit rounded-3xl px-3 py-2"
+              className="mx-auto z-40  items-center flex bg-black text-lg text-orange-400 w-fit rounded-xl px-2 py-1"
             >
               Reoload the Page
             </button>

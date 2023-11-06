@@ -16,9 +16,10 @@ const Navbar = ({
     //tyrn the input to an array containing both the city name and country Code
     setInput(Input.split(","));
     AdjustWeather(Input.split(","));
+
     if (TextInput(Input) != true) {
-      return toast(
-        "For Better Results Type in the City with the Country Code like this = 'Alabama,US' or 'Moscos,RU' ",
+      return toast.error(
+        "For Better Results - Type:\n  'Alabama,US' or 'Moscow,RU'",
         {
           duration: 8000,
         }
@@ -27,7 +28,6 @@ const Navbar = ({
 
     console.log(Input);
   }
-  
 
   function TextInput(location: string) {
     let check = /[a-zA-Z][,][a-zA-Z]/.test(location);
@@ -54,7 +54,7 @@ const Navbar = ({
         <input
           type="text"
           placeholder="Type 'City name, Country Name'"
-          className="border-orange-400 outline-none lg:w-full w-5/5 float-right rounded-lg border  px-3 py-2"
+          className="border-orange-400 outline-none lg:w-full w-4/5 float-right rounded-lg border  px-1 py-2"
           value={Input}
           onChange={(e) => setInput(e.target.value)}
         />

@@ -44,28 +44,30 @@ const GetLocation = () => {
   };
 
   useEffect(() => {
-    const successCallback = (position: any) => {
-      lat = position.coords.latitude;
-      lon = position.coords.longitude;
-      console.log(lat, lon);
-      userLocation(lat, lon);
-      //return { lat, lon };
-      return;
-    };
+    setTimeout(() => {
+      const successCallback = (position: any) => {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        console.log(lat, lon);
+        userLocation(lat, lon);
+        //return { lat, lon };
+        return;
+      };
 
-    const options = {
-      enableHighAccuracy: true,
-    };
+      const options = {
+        enableHighAccuracy: true,
+      };
 
-    const errorCallback = (error: any) => {
-      console.log(error);
-    };
+      const errorCallback = (error: any) => {
+        console.log(error);
+      };
 
-    navigator.geolocation.getCurrentPosition(
-      successCallback,
-      errorCallback,
-      options
-    );
+      navigator.geolocation.getCurrentPosition(
+        successCallback,
+        errorCallback,
+        options
+      );
+    }, 2000);
   }, []);
 
   return { lat, lon, loc };

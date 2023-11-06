@@ -104,6 +104,7 @@ export const WeatherProvider = ({
   function AdjustWeather([city, country]: string[]) {
     let ParsedLocation = { city: city, country: country };
     setlocation(ParsedLocation);
+    console.log(city + "" + country);
   }
 
   // function getStateLocation(userState) {
