@@ -18,8 +18,8 @@ const Modals = () => {
   }, 15000);
 
   return (
-    <div className="modal-bg flex items-start z-30  h-[200%] w-5/6 lg:w-[100vw] mx-auto bg-white absolute text-center">
-      <div className="z-40 mx-auto mt-[30vh] ">
+    <div className="modal-bg flex justify-center z-30 h-[200%] w-5/6 lg:w-[100%] mx-auto bg-white absolute text-center">
+      <div className="z-40 mt-[25vh]  ">
         <ThreeDots
           height="220"
           width="220"
@@ -27,19 +27,19 @@ const Modals = () => {
           color="orange"
           ariaLabel="three-dots-loading"
           wrapperStyle={{}}
-          wrapperClass=""
+          wrapperClass="flex justify-center w-4/5 mx-auto"
           visible={true}
         />
         {ShowButton && (
           <>
             <p className="font-nunito pb-3 -mt-10 text-center text-lg">
-              Kindly refresh Your page if it's taking too long to load...
+              Kindly refresh if it's taking too long to load...
             </p>
             <button
               onClick={reload}
-              className="mx-auto z-40  items-center flex bg-black text-lg text-orange-400 w-fit rounded-xl px-3 py-2"
+              className="mx-auto z-40  items-center flex bg-black text-lg text-orange-400 w-fit rounded-3xl px-4 py-2"
             >
-              Reoload the Page
+              Reload the Page
             </button>
           </>
         )}
