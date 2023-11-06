@@ -1,5 +1,3 @@
-import React from "react";
-
 const DaysCard = ({
   image,
   high,

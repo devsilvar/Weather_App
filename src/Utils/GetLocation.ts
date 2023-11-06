@@ -1,10 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-import {
-  APIMAP_KEY,
-  userLocationLinkRight,
-  userLocationLinkleft,
-} from "./Fetch";
+import { userLocationLinkRight, userLocationLinkleft } from "./Fetch";
 let localUserLocation: string[];
 if (localStorage.localUserLocation) {
   //check if we have any students in the local storage

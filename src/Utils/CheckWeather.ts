@@ -8,8 +8,7 @@ import {
   threeCloud,
   thunderRain,
 } from "../assets/Index";
-import { useContext } from "react";
-import WeatherContext from "../Context/WeatherContext";
+
 
 export function checkWeather(weather: any) {
   let searchedWeather;

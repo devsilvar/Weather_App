@@ -13,3 +13,14 @@ export interface Weather {
   name: string;
   cod: number;
 }
+
+export interface weatherProp {
+  city: string;
+  Days: any;
+  weathers: Weather;
+  setLoader: any;
+  AdjustWeather: (text: string) => void;
+  getStateLocation: (text: string) => void;
+  ToastState: string;
+  etToastState: any;
+}

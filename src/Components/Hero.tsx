@@ -1,16 +1,13 @@
-import { useRef, useEffect, useState, useContext } from "react";
-import { SunHero, cold, sun, sunCold, thunderRain } from "../assets/Index";
-import { monthNames, thisDay, dayNames } from "../Utils";
-import WeatherContext from "../Context/WeatherContext";
+import { useEffect, useState } from "react";
+import { cold,  sunCold } from "../assets/Index";
+import { monthNames, thisDay } from "../Utils";
 import { checkWeather } from "../Utils/CheckWeather";
-import { useWeatherContext } from "../Utils";
 
 const Hero = ({ weathers, Days }: { weathers: any; Days: any }) => {
-  const [ChangeWeather, setChangeWeather] = useState<string>("");
+//  const [ChangeWeather, setChangeWeather] = useState<string>("");
   //const { weathers } = useContext(WeatherContext);
-  const [hotOrCold, sethotOrCold] = useState<boolean>(false);
+  //const [hotOrCold, sethotOrCold] = useState<boolean>(false);
   // const { Days, weathers } = useWeatherContext();
-
   // const timer = () => {
   //   return new Date().toLocaleTimeString();
   // };

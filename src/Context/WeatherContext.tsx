@@ -6,22 +6,9 @@ import {
   DaysApiLeft,
   weatherApiLeft,
   weatherApiRight,
-  API_KEY,
 } from "../Utils/Fetch";
-import { Weather } from "../Types";
 import Modals from "../Utils/Modals";
 import GetLocation, { Lst } from "../Utils/GetLocation";
-
-interface weatherProp {
-  city: string;
-  Days: any;
-  weathers: Weather;
-  setLoader: any;
-  AdjustWeather: (text: string) => void;
-  getStateLocation: (text: string) => void;
-  ToastState: string;
-  etToastState: any;
-}
 
 const WeatherContext = createContext<any | undefined>(undefined);
 
@@ -38,7 +25,6 @@ export const WeatherProvider = ({
   // );
 
   const [location, setlocation] = useState<Lst>(ParsedUserLocation);
-  const [HeroAddedState, setHeroAddedState] = useState<string>("");
   const [ToastState, setToastState] = useState(false);
   const [Days, setDays] = useState("");
   const [weathers, setWeathers] = useState("");
@@ -170,13 +156,6 @@ export const WeatherProvider = ({
     fetchDays();
     fetchWeather();
   }, [location]);
-
-  const ContextValue = {
-    location: location,
-    Days: Days,
-    weathers: weathers,
-    AdjustWeather: AdjustWeather,
-  };
 
   if (Loader) return <Modals />;
 

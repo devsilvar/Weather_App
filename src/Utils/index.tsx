@@ -1,8 +1,4 @@
 import { Thermometer, ThermometerSimple } from "@phosphor-icons/react/dist/ssr";
-import { cloudy, rainAndSun, snow, sun, thunderRain } from "../assets/Index";
-import { BsWater } from "react-icons/bs";
-import { useContext } from "react";
-import WeatherContext from "../Context/WeatherContext";
 import { checkWeather } from "./CheckWeather";
 export { useWeatherContext } from "./UseContext";
 

@@ -3,10 +3,6 @@ import DaysCard from "./DaysCard";
 import { BsSpeedometer2 } from "react-icons/bs";
 import { DaysInfo, TempBoxes } from "../Utils";
 import TempCardL from "./TempCardsL";
-import WeatherContext from "../Context/WeatherContext";
-import { useEffect } from "react";
-import { useContext } from "react";
-import Modals from "../Utils/Modals";
 const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
   // const { weathers, Days } = useContext(WeatherContext);
 
