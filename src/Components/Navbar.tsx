@@ -51,7 +51,9 @@ const Navbar = ({ AdjustWeather }: { weathers: any; AdjustWeather: any }) => {
         <button className="bg-transparent w-fit" type="submit">
           <FiSearch type="submit" className="absolute right-3 top-3" />
         </button>
-        <p className="text-xs text-right pt-5"> E.g. 'Alabama,US'</p>
+        <p className="text-xs text-right pt-5">
+          Use Search Format 'Alabama,US'
+        </p>
       </div>
     </form>
   );

@@ -9,6 +9,9 @@ import {
   thunderRain,
 } from "../assets/Index";
 
+// swicth function to convert the Image on the hero section correspond with the real weather condition
+
+//it was used in the --Hero componenets  - Hero.tsx
 export function checkWeather(weather: any) {
   let searchedWeather;
   switch (weather) {
@@ -17,9 +20,6 @@ export function checkWeather(weather: any) {
       break;
     case "sun":
       searchedWeather = sun;
-      break;
-    case "Rain":
-      searchedWeather = smallRain;
       break;
     case "Clouds":
       searchedWeather = cloudy;

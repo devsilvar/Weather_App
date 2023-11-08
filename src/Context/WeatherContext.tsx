@@ -7,8 +7,8 @@ import {
   weatherApiLeft,
   weatherApiRight,
 } from "../Utils/Fetch";
-import Modals from "../Utils/Modals";
-import GetLocation, { Lst } from "../Utils/GetLocation";
+import Modals from "../small Components/Modals";
+import GetLocation, { Lst } from "../Utils/DeviceLocation";
 
 const WeatherContext = createContext<any | undefined>(undefined);
 
@@ -17,16 +17,20 @@ export const WeatherProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  //run the get location code from ---Getlocation.ts and save it to the localstorage
   GetLocation();
-  const [Loader, setLoader] = useState(false);
+
+  //retrive the values from the local storage
   let Datas = localStorage.getItem("localUserLocation");
   const ParsedUserLocation: Lst = JSON.parse(Datas || "{}");
 
+  const [Loader, setLoader] = useState(false);
   const [location, setlocation] = useState<Lst>(ParsedUserLocation);
   const [ToastState, setToastState] = useState(false);
   const [Days, setDays] = useState("");
   const [weathers, setWeathers] = useState("");
 
+  //toast that indicates if the location is not available
   const errorNotify = () => {
     setTimeout(() => {
       toast.error("Location Not Found in Database");
@@ -39,11 +43,13 @@ export const WeatherProvider = ({
   // const cc = GetLocation();
   // console.log(cc);
 
+  //function that chnages serches for the weather when it is inputed from the navbar
   function AdjustWeather([city, country]: string[]) {
     let ParsedLocation = { city: city, country: country };
     setlocation(ParsedLocation);
   }
 
+  //get the weather from teh weather api
   const fetchWeather = async () => {
     const weatherNew =
       weatherApiLeft + `${location.city},${location.country}` + weatherApiRight;
@@ -60,6 +66,7 @@ export const WeatherProvider = ({
     }
   };
 
+  //get the forecasted days from teh days api
   const fetchDays = async () => {
     try {
       const response = await axios.get(
@@ -75,6 +82,7 @@ export const WeatherProvider = ({
     }
   };
 
+  //for page load
   const PageReload: any = (): void => {
     window.location.reload();
   };
@@ -83,6 +91,7 @@ export const WeatherProvider = ({
     fetchDays();
     fetchWeather();
   }, [location]);
+  //i used three apis so i am reloading so that all the api will be loaded at first - it runs on the first load no on subsequent onces
   if (!location.city) {
     setTimeout(() => {
       PageReload();

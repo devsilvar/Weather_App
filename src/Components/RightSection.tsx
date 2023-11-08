@@ -1,8 +1,8 @@
 import { Thermometer, Wind } from "@phosphor-icons/react";
-import DaysCard from "./DaysCard";
+import DaysCard from "../small Components/DaysCard";
 import { BsSpeedometer2 } from "react-icons/bs";
 import { DaysInfo, TempBoxes } from "../Utils";
-import TempCardL from "./TempCardsL";
+import TempCardL from "../small Components/TempCardsL";
 const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
   // const { weathers, Days } = useContext(WeatherContext);
 
@@ -15,6 +15,8 @@ const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
             <div className="">
               {/* <p className="text-center pt-4">Main Information</p> */}
               <div className="temperature lg:justify-normal justify-center flex flex-wrap lg:p-5 py-5 gap-7 lg:gap-6 text-center">
+
+                {/* located in the index.ts */}
                 {TempBoxes(weathers)?.map((item, index: number) => {
                   return (
                     <TempCardL
@@ -65,6 +67,7 @@ const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
 
       <div className="bg-orange-400 lg:mx-0 mx-3 rounded-xl p-3 lg:p-5 mb-5">
         <div className="overflow-x-auto flex lg:gap-5 gap-3  text-center w-full ">
+          {/* located in the index.ts */}
           {DaysInfo(Days)?.map((item, index: number) => {
             return (
               <DaysCard

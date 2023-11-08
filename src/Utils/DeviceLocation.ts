@@ -13,10 +13,8 @@ if (localStorage.localUserLocation) {
   localStorage.setItem("products", JSON.stringify(localUserLocation));
 }
 
-let loc: string;
-
-let lat: number;
-let lon: number;
+let lat: number; //for the longitude
+let lon: number; //for the latitude
 
 export type Lst = {
   [x: string]: any;
@@ -24,7 +22,7 @@ export type Lst = {
   country: string;
 };
 
-//API fetch Call to get the initail location of the users
+//API fetch Call to get the initail location of the user device
 const GetLocation = () => {
   const userLocation = (lat: number, lon: number) => {
     axios
@@ -70,8 +68,6 @@ const GetLocation = () => {
       );
     }, 1000);
   }, []);
-
-  return { lat, lon, loc };
 };
 
 export default GetLocation;

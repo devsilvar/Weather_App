@@ -1,10 +1,10 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
-import IconInfo from "./Components/IconInfo";
-import RightInfo from "./Components/RightInfo";
+import IconInfo from "./Components/LeftSection";
+import RightInfo from "./Components/RightSection";
 import { useWeatherContext } from "./Utils";
-import Modals from "./Utils/Modals";
+import Modals from "./small Components/Modals";
 import { Toaster } from "react-hot-toast";
 function App() {
   //get the Days, weather values form the Context API after loading from the rest API :weatheropn.com
