@@ -86,7 +86,7 @@ export const WeatherProvider = ({
   if (!location.city) {
     setTimeout(() => {
       PageReload();
-    }, 4000);
+    }, 7000);
   }
   if (Loader) return <Modals />;
 
