@@ -6,3 +6,4 @@ export const weatherApiRight = `&appid=${API_KEY}&units=metric`;
 export const APIMAP_KEY = `MxOdkoWsS3jMJikgMYSAllHMRLq00rVz`;
 export const userLocationLinkleft = `https://www.mapquestapi.com/geocoding/v1/reverse?key=${APIMAP_KEY}&location=`
 export const userLocationLinkRight = `&includeRoadMetadata=true&includeNearestIntersection=true`
+export const LoaderUserLocationL = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${API_KEY}&units=metric`

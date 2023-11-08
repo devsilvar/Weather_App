@@ -19,6 +19,7 @@ let lat: number;
 let lon: number;
 
 export type Lst = {
+  [x: string]: any;
   city: string;
   country: string;
 };
@@ -48,7 +49,7 @@ const GetLocation = () => {
       const successCallback = (position: any) => {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-       // console.log(lat, lon);
+        // console.log(lat, lon);
         userLocation(lat, lon);
         //return { lat, lon };
         return;
@@ -67,7 +68,7 @@ const GetLocation = () => {
         errorCallback,
         options
       );
-    }, 2000);
+    }, 1000);
   }, []);
 
   return { lat, lon, loc };

@@ -8,7 +8,7 @@ import {
   weatherApiRight,
 } from "../Utils/Fetch";
 import Modals from "../Utils/Modals";
-import { Lst } from "../Utils/GetLocation";
+import GetLocation, { Lst } from "../Utils/GetLocation";
 
 const WeatherContext = createContext<any | undefined>(undefined);
 
@@ -17,6 +17,7 @@ export const WeatherProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  GetLocation();
   const [Loader, setLoader] = useState(false);
   let Datas = localStorage.getItem("localUserLocation");
   const ParsedUserLocation: Lst = JSON.parse(Datas || "{}");
@@ -32,13 +33,16 @@ export const WeatherProvider = ({
     }, 1000);
   };
 
+  // console.log(location);
+  // console.log(ParsedUserLocation);
+
   // const cc = GetLocation();
   // console.log(cc);
 
   function AdjustWeather([city, country]: string[]) {
     let ParsedLocation = { city: city, country: country };
     setlocation(ParsedLocation);
-   }
+  }
 
   const fetchWeather = async () => {
     const weatherNew =
@@ -71,11 +75,19 @@ export const WeatherProvider = ({
     }
   };
 
+  const PageReload: any = (): void => {
+    window.location.reload();
+  };
+
   useEffect(() => {
     fetchDays();
     fetchWeather();
   }, [location]);
-
+  if (!location.city) {
+    setTimeout(() => {
+      PageReload();
+    }, 4000);
+  }
   if (Loader) return <Modals />;
 
   return (

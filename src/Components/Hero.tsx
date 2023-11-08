@@ -29,6 +29,7 @@ const Hero = ({ weathers }: { weathers: any; Days: any }) => {
     type: "region",
   });
 
+  console.log(weathers.main.temp);
   return (
     <div className="relative ">
       <img

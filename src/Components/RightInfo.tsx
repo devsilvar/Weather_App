@@ -6,7 +6,6 @@ import TempCardL from "./TempCardsL";
 const RightInfo = ({ Days, weathers }: { Days: any; weathers: any }) => {
   // const { weathers, Days } = useContext(WeatherContext);
 
- 
   //  console.log(TempBoxes(weathers));
   return (
     <section className="lg:col-span-2 col-span-3 font-nunito">
